@@ -5,58 +5,60 @@ import java.io.Serializable;
 /**
  * 用户表
  */
-public class User implements Serializable{
-	
+public class User implements Serializable {
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 5414513605118314820L;
 
+	private int id;
+
 	/**
 	 * 用户名
 	 */
 	private String name;
-	
+
 	/**
 	 * 密码
 	 */
 	private String pwd;
-	
+
 	/**
 	 * 联系号码
 	 */
 	private String phone;
-	
+
 	/**
 	 * 邮箱
 	 */
 	private String email;
-	
+
 	/**
 	 * 昵称
 	 */
 	private String nickName;
-	
+
 	/**
 	 * 个人主页
 	 */
 	private String homeUrl;
-	
+
 	/**
 	 * 群组
 	 */
 	private String groupName;
-	
+
 	/**
 	 * 账号创建时间
 	 */
 	private Integer created;
-	
+
 	/**
 	 * 上次活跃时间
 	 */
 	private Integer activited;
-	
+
 	/**
 	 * 上次登录时间
 	 */
@@ -141,6 +143,13 @@ public class User implements Serializable{
 	public void setLogger(Integer logger) {
 		this.logger = logger;
 	}
-	
-	
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 }

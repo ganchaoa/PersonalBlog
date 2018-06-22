@@ -1,6 +1,8 @@
 package com.ganchaoa.util;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -22,4 +24,14 @@ public class MyUtils {
 		}
 		return null;
 	} 
+	
+	public static void  setCookie(HttpServletResponse response, Integer id) {
+		String value = Tools.enAES(id.toString(), Constant.AES_SALT);
+		boolean isSSL = false;
+		Cookie cookie = new Cookie(Constant.USER_IN_COOKIE,value);
+		cookie.setPath("/");
+		cookie.setMaxAge(12*60*60);
+		cookie.setSecure(isSSL);
+		response.addCookie(cookie);
+	}
 }
