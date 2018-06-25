@@ -3,7 +3,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ganchaoa.dao.UserDao">
     <select id="findByName" parameterType="string" resultType="User">
-        SELECT * FROM user WHERE name=#{name}
+        SELECT * FROM t_user WHERE name=#{name}
+    </select>
+    
+    <select id="login" parameterType="string" resultType="User">
+    	SELECT * FROM t_user WHERE name = #{name} AND pwd = #{password}
     </select>
     
 </mapper>
