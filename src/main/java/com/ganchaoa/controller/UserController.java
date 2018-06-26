@@ -1,7 +1,11 @@
 package com.ganchaoa.controller;
 
+import java.io.IOException;
+
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +21,7 @@ import com.ganchaoa.core.AbstractController;
 import com.ganchaoa.entity.User;
 import com.ganchaoa.entity.bo.RestResponseBo;
 import com.ganchaoa.service.UserService;
+import com.ganchaoa.util.Commons;
 import com.ganchaoa.util.MyUtils;
 
 @Controller
@@ -52,5 +57,23 @@ public class UserController extends AbstractController{
 		}
 		return RestResponseBo.ok();
 	}
-
+	
+	@RequestMapping(value="/logout",method = RequestMethod.GET)
+	public void logout(HttpSession session,HttpServletRequest request, HttpServletResponse response) {
+		session.removeAttribute(Constant.LOGIN_SESSION_KEY);
+		Cookie cookie = new Cookie(Constant.USER_IN_COOKIE,"");
+		cookie.setMaxAge(0);
+		response.addCookie(cookie);
+		try {
+			response.sendRedirect(Commons.site_log());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@RequestMapping(value="/index", method = RequestMethod.GET)
+	public String index(HttpServletRequest request, HttpServletResponse response) {
+		
+		return "admin/index";
+	}
 }

@@ -17,7 +17,7 @@ public class User implements Serializable {
 	/**
 	 * 用户名
 	 */
-	private String name;
+	private String username;
 
 	/**
 	 * 密码
@@ -63,14 +63,6 @@ public class User implements Serializable {
 	 * 上次登录时间
 	 */
 	private Integer logger;
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public String getPwd() {
 		return pwd;
@@ -150,6 +142,14 @@ public class User implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 }
