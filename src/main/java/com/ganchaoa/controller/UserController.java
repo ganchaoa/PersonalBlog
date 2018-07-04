@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ganchaoa.constant.Constant;
 import com.ganchaoa.controller.exception.ExceptionHelper;
@@ -39,8 +40,9 @@ public class UserController extends AbstractController{
 		return "admin/login";
 	}
 
+	@ResponseBody
 	@RequestMapping(value="/login", method = RequestMethod.POST)
-	public RestResponseBo<?> do_login(@RequestParam("username")String username, @RequestParam("password") String password, HttpServletRequest request, HttpServletResponse response) {
+	public RestResponseBo do_login(@RequestParam("username")String username, @RequestParam("password") String password, HttpServletRequest request, HttpServletResponse response) {
 		Integer error_count = cache.get("login_error_count");
 		try {
 			User user = userService.login(username,password);
@@ -73,7 +75,7 @@ public class UserController extends AbstractController{
 	
 	@RequestMapping(value="/index", method = RequestMethod.GET)
 	public String index(HttpServletRequest request, HttpServletResponse response) {
-		
+		System.out.println("管理首页");
 		return "admin/index";
 	}
 }

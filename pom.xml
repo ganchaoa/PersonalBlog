@@ -170,7 +170,7 @@
 			<artifactId>thymeleaf-spring4</artifactId>
 			<version>${thymeleaf.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.thymeleaf</groupId>
 			<artifactId>thymeleaf</artifactId>
@@ -192,6 +192,10 @@
 				<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
 			</properties>
 		</profile>
+
 	</profiles>
 
+	<build>
+		<finalName>blog</finalName>
+	</build>
 </project>

@@ -56,11 +56,11 @@
     var tale = new $.tale();
     function checkForm() {
         tale.post({
-            url: '/PersonalBlog/admin/login',
+            url: '/blog/admin/login',
             data: $("#loginForm").serialize(),
             success: function (result) {
                 if (result && result.success) {
-                    window.location.href = '/PersonalBlog/admin/index';
+                    window.location.href = '/blog/admin/index';
                 } else {
                     tale.alertError(result.msg || '登录失败');
                 }
