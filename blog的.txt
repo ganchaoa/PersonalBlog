@@ -33,3 +33,23 @@ tag	标签
 	description	描述
 	parent 	父标签
 ]
+
+comment 评论
+[
+	id 主键
+	content 内容
+	created 创建时间
+	author	作者
+	parent	父评论
+	type	类型
+]
+
+log	日志
+[
+	id 主键
+	action	动作
+	data	内容
+	created 创建时间
+	user 产生日志的操作者
+	ip	ip地址
+]
