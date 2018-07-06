@@ -42,7 +42,7 @@ public class UserController extends AbstractController{
 
 	@ResponseBody
 	@RequestMapping(value="/login", method = RequestMethod.POST)
-	public RestResponseBo do_login(@RequestParam("username")String username, @RequestParam("password") String password, HttpServletRequest request, HttpServletResponse response) {
+	public RestResponseBo<?> do_login(@RequestParam("username")String username, @RequestParam("password") String password, HttpServletRequest request, HttpServletResponse response) {
 		Integer error_count = cache.get("login_error_count");
 		try {
 			User user = userService.login(username,password);

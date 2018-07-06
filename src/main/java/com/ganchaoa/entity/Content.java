@@ -1,29 +1,62 @@
 package com.ganchaoa.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 文章表
  *
  */
-public class Content {
+public class Content implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5597707841499994120L;
+
+	/**
+	 * 主键
+	 */
 	private int id;
 	
+	/**
+	 * 标题
+	 */
 	private String title;
 	
+	/**
+	 * 标签
+	 */
 	private String tags;
 	
+	/**
+	 * 内容
+	 */
 	private String content;
 	
+	/**
+	 * 作者
+	 */
 	private String author;
 	
+	/**
+	 * 创建时间
+	 */
 	private Date create_time;
 	
+	/**
+	 * 状态
+	 */
 	private String status;
 	
+	/**
+	 * 是否能评价
+	 */
 	private boolean can_comment;
 	
+	/**
+	 * 点击率
+	 */
 	private int hit_number;
 
 	public int getId() {

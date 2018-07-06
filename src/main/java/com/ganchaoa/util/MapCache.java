@@ -26,6 +26,7 @@ public class MapCache {
 		cachePool = new ConcurrentHashMap<>(cacheCount);
 	}
 
+	@SuppressWarnings("unchecked")
 	public <T> T get(String key) {
 		CacheObject cacheObject = cachePool.get(key);
 		if (cacheObject != null) {

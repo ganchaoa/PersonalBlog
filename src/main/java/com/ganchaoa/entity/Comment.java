@@ -1,21 +1,42 @@
 package com.ganchaoa.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * 评价表
  *
  */
-public class Comment {
+public class Comment implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1798113437482372130L;
+
+	/**
+	 * 主键
+	 */
 	private int id;
 	
+	/**
+	 * 内容
+	 */
 	private String content;
 	
+	/**
+	 * 创建时间
+	 */
 	private Date created;
 	
+	/**
+	 * 父级评价
+	 */
 	private int parent;
 	
+	/**
+	 * 种类
+	 */
 	private String type;
 
 	public int getId() {
