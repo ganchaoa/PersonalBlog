@@ -7,4 +7,6 @@ import com.ganchaoa.entity.Comment;
 public interface CommentService {
 
 	public List<Comment> recentComments(int limit);
+	
+	public Long count();
 }

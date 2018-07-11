@@ -24,6 +24,7 @@ content		文章
  status		状态
  canComment	是否可以评论
  hit		点击量
+ type		类型
 ]
 
 tag	标签
@@ -52,4 +53,25 @@ log	日志
 	created 创建时间
 	user 产生日志的操作者
 	ip	ip地址
+]
+
+attach 附件
+[
+	id	主键
+	fname	名称
+	fkey	路径
+	ftype	类型
+	authorId	作者
+	created		创建时间
+]
+
+meta	项目
+[
+	mid		主键
+	name	名称
+	slug	缩略名
+	type	类型
+	description		描述
+	sort	排序
+	parent	父项目
 ]
