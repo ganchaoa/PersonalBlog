@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>登录博客后台</title>
+    <title>登陆博客后台</title>
 
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <link rel="shortcut icon" th:href="@{/static/admin/images/favicon.png}"/>
@@ -21,7 +21,7 @@
 <div class="log">
     <div class="am-g">
         <div class="am-u-lg-3 am-u-md-6 am-u-sm-8 am-u-sm-centered log-content">
-            <h1 class="log-title am-animation-slide-top">登录POSSIBLE</h1>
+            <h1 class="log-title am-animation-slide-top">登陆POSSIBLE</h1>
             <br />
             <form class="am-form" id="loginForm">
 
@@ -40,7 +40,7 @@
                 <button type="button"
                         class="am-btn am-btn-primary am-btn-block am-btn-lg am-radius am-animation-slide-bottom log-animation-delay"
                  onclick="checkForm()">
-                    登&nbsp;录
+                  登&nbsp;陆
                 </button>
             </form>
         </div>
@@ -62,7 +62,7 @@
                 if (result && result.success) {
                     window.location.href = '/blog/admin/index';
                 } else {
-                    tale.alertError(result.msg || '登录失败');
+                    tale.alertError(result.msg || '登陆失败');
                 }
             }
         });

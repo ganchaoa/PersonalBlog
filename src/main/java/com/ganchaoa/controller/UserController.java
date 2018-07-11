@@ -75,6 +75,9 @@ public class UserController extends AbstractController{
 	
 	@RequestMapping(value="/index", method = RequestMethod.GET)
 	public String index(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("-----------------------------------------------------");
+		Object attribute = request.getSession().getAttribute(Constant.LOGIN_SESSION_KEY);
+		System.out.println();
 		System.out.println("管理首页");
 		return "admin/index";
 	}
