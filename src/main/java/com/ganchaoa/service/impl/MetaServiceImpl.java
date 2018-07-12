@@ -1,27 +1,29 @@
 package com.ganchaoa.service.impl;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ganchaoa.dao.LogDao;
-import com.ganchaoa.entity.Log;
-import com.ganchaoa.service.LogService;
+import com.ganchaoa.dao.MetaDao;
+import com.ganchaoa.service.MetaService;
 
 @Service
 @Transactional(readOnly = true)
-public class LogServiceImpl implements LogService {
+public class MetaServiceImpl implements MetaService {
 
 	@Autowired
-	LogDao logDao;
+	MetaDao metaDao;
 	
 	@Override
-	public List<Log> getLogs(int page, int limit) {
+	public Long count() {
 		
-		return logDao.getLogs(page, limit);
+		return metaDao.count();
+	}
+
+	@Override
+	public Long countByType(String type) {
 		
+		return metaDao.countByType(type);
 	}
 
 }

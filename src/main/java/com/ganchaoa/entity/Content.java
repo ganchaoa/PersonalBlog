@@ -58,6 +58,11 @@ public class Content implements Serializable{
 	 * 点击率
 	 */
 	private int hit_number;
+	
+	 /**
+	 * 类型
+	 */
+	private String type;
 
 	public int getId() {
 		return id;
@@ -89,6 +94,14 @@ public class Content implements Serializable{
 
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public Date getCreate_time() {

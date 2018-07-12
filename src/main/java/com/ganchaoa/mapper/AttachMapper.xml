@@ -2,14 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.ganchaoa.dao.CommentDao">
-	<select id="recentComment" parameterType="int"
-		resultType="Comment">
-		select * from t_comment limit #{limit};
-	</select>
-	
+<mapper namespace="com.ganchaoa.dao.AttachDao">
 	<select id="count"  resultType="Long">
-		select count(*) from t_comment
+		select count(*) from t_attach
 	</select>
 
 </mapper>
