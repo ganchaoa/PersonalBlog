@@ -30,6 +30,19 @@
         <!--指定sql映射xml文件的路径 -->
         <property name="mapperLocations"
             value="classpath:com/ganchaoa/mapper/*Mapper.xml"></property>
+            
+            <property name="plugins">
+    <array>
+      <bean class="com.github.pagehelper.PageInterceptor">
+        <property name="properties">
+          <!-- config params as the following -->
+          <value>
+            helperDialect=mysql
+          </value>
+        </property>
+      </bean>
+    </array>
+  </property>
     </bean>
     
     <!--自动扫描映射接口-->
